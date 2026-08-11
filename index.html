@@ -64,7 +64,16 @@
       <div class="field"><label>📅 NEXT-QUARTER INITIATIVE</label><textarea id="next" placeholder="Management proposes that we..."></textarea></div>
     </div>
 
-    <div class="card"><div class="section"><h2>📸 My Date Dump</h2></div><div id="myPhotos" class="photos"></div><p class="tiny">Your gallery is separate from your partner's.</p></div>
+    <div class="card">
+      <div class="section"><h2>📸 My Date Dump</h2></div>
+      <label class="photo upload" style="min-height:110px;cursor:pointer;display:flex;flex-direction:column;gap:5px">
+        <span style="font-size:30px">📸</span>
+        <span>Add photos from your phone</span>
+        <input id="photoInput" type="file" accept="image/*" multiple>
+      </label>
+      <div id="myPhotos" class="photos" style="margin-top:9px"></div>
+      <p class="tiny">Your gallery is separate from your partner's.</p>
+    </div>
 
     <div class="card"><h2 style="text-align:center">📋 Final Performance Verdict</h2><div id="score" class="score">—</div><p id="scoreText" class="tiny" style="text-align:center">Rate the categories to calculate your score.</p><button class="btn primary" onclick="save()">☁️ Save My Review</button><div id="saveStatus" class="status hidden"></div></div>
   </div>
@@ -99,8 +108,22 @@ async function loadOwn(){const {data,error}=await supabase.from("relationship_re
 window.save=async()=>{const row={room_code:room,reviewer_name:name,partner_role:role,payload:payload(),photos};const {error}=await supabase.from("relationship_reviews").upsert(row,{onConflict:"room_code,reviewer_name"});status("saveStatus",error?"🔴 "+error.message:"🟢 Saved to the shared room.",!error);if(!error)dashboard()};
 window.dashboard=async()=>{const {data,error}=await supabase.from("relationship_reviews").select("*").eq("room_code",room);if(error){$("dashStatus").textContent="🔴 "+error.message;return}$("dashStatus").textContent=(data?.length||0)+" of 2 reviews submitted.";$("cards").innerHTML=(data||[]).map(r=>{const vals=Object.values(r.payload?.ratings||{}),avg=vals.length?(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1):"—";return `<div class="review"><b>💗 Partner ${r.partner_role}</b><div class="score">${avg} / 6</div><div class="tiny">${(r.photos||[]).length} photo(s)</div>${r.payload?.song?`<div class="song">🎵 <b>${r.payload.song}</b>${r.payload.artist?" — "+r.payload.artist:""}</div>`:""}</div>`}).join("")};
 window.reveal=async()=>{const {data,error}=await supabase.from("relationship_reviews").select("*").eq("room_code",room);if(error)return alert(error.message);if((data||[]).length<2)return alert("Both partners need to save their reviews first. 💗");let map={};data.forEach(r=>map[r.partner_role]=r);let out="<h3>⚖️ Side-by-side comparison</h3><table><tr><th>Category</th><th>Partner A</th><th>Partner B</th></tr>";for(const [k,i,l] of cats)out+=`<tr><td>${i} ${l}</td><td>${emo[(map.A.payload?.ratings||{})[k]-1]||"—"}</td><td>${emo[(map.B.payload?.ratings||{})[k]-1]||"—"}</td></tr>`;out+="</table>";data.forEach(r=>{const p=r.payload||{};out+=`<h3>💗 Partner ${r.partner_role}</h3>${p.song?`<div class="song">🎵 ${p.song} — ${p.artist||""}</div>`:""}${p.favourite?`<p><b>🏆 Achievement:</b> ${p.favourite}</p>`:""}${p.funny?`<p><b>🤣 Incident:</b> ${p.funny}</p>`:""}${p.loved?`<p><b>💗 Positive feedback:</b> ${p.loved}</p>`:""}`});$("compare").innerHTML=out};
-function myPhotos(){$("myPhotos").innerHTML=`<label class="photo upload">＋<br>Upload photos<input id="pickPhotos" type="file" accept="image/*" multiple></label>`+photos.map(p=>`<div class="photo"><img src="${p.url}"></div>`).join("");$("pickPhotos").onchange=upload}
-async function upload(e){for(const f of e.target.files){const path=`${room}/${role}/${crypto.randomUUID()}-${f.name.replace(/[^a-z0-9._-]/gi,"_")}`;const {error}=await supabase.storage.from("date-photos").upload(path,f);if(error){alert(error.message);continue}const {data}=supabase.storage.from("date-photos").getPublicUrl(path);photos.push({url:data.publicUrl,path})}myPhotos();await save()}
+function myPhotos() {
+  $("myPhotos").innerHTML = photos.map(p => `<div class="photo"><img src="${p.url}"></div>`).join("");
+}
+async function upload(e) {
+  for (const f of e.target.files) {
+    const path = `${room}/${role}/${crypto.randomUUID()}-${f.name.replace(/[^a-z0-9._-]/gi,"_")}`;
+    const {error} = await supabase.storage.from("date-photos").upload(path, f);
+    if (error) { alert(error.message); continue; }
+    const {data} = supabase.storage.from("date-photos").getPublicUrl(path);
+    photos.push({url:data.publicUrl,path});
+  }
+  myPhotos();
+  await save();
+  e.target.value = "";
+}
+document.getElementById("photoInput").addEventListener("change", upload);
 async function memories(){const {data}=await supabase.from("relationship_reviews").select("reviewer_name,partner_role,photos").eq("room_code",room);$("allPhotos").innerHTML=(data||[]).map(r=>`<h3>Partner ${r.partner_role} · ${r.reviewer_name}</h3><div class="gallery">${(r.photos||[]).map(p=>`<img src="${p.url}">`).join("")||"<span class='tiny'>No photos yet.</span>"}</div>`).join("")}
 ratingsUI();score();
 </script>
