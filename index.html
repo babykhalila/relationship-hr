@@ -8,7 +8,7 @@
 <style>
 :root{--bg:#fff7f5;--card:#fff;--ink:#342727;--muted:#907b7b;--pink:#e98f9b;--pink2:#f9dfe3;--line:#eadbdc;--shadow:0 10px 30px rgba(70,40,40,.09);--gold:#d69d35}
 *{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#fffaf8,#fff0f3);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.app{max-width:780px;margin:auto;padding:env(safe-area-inset-top) 14px calc(28px + env(safe-area-inset-bottom))}
-.hero{min-height:45vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px 8px}.logo{font-size:56px}h1{font-size:clamp(36px,10vw,54px);line-height:1;letter-spacing:-2px;margin:12px 0}.tag,.tiny{color:var(--muted);font-size:13px}.card{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:19px;margin:12px 0}.field{margin-bottom:13px}label{display:block;font-size:11px;font-weight:850;margin-bottom:6px;letter-spacing:.2px}input,textarea,select{width:100%;border:1px solid var(--line);background:#fffafa;border-radius:14px;padding:13px;font-size:16px;outline:0;color:var(--ink)}textarea{min-height:100px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(233,143,155,.12)}.btn{width:100%;border:0;border-radius:15px;padding:14px;min-height:50px;font-weight:850}.primary{background:var(--pink);color:#fff}.secondary{background:var(--pink2);color:var(--ink)}.ghost{background:#fff;border:1px solid var(--line)}.row,.choices,.dash,.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.screen{display:none}.screen.active{display:block}.top{position:sticky;top:0;z-index:5;padding:10px 0;background:rgba(255,247,245,.92);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center}.pill{background:var(--pink2);border-radius:999px;padding:6px 9px;font-size:11px;font-weight:800}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:6px 0 12px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 4px;font-size:11px;font-weight:800}.tab.active{background:var(--pink2);border-color:var(--pink)}.hidden{display:none!important}.section{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px}h2{font-size:19px;margin:0}h3{font-size:15px;margin:15px 0 8px}.rating{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px}.emoji{flex:0 0 48px;min-height:48px;border:1px solid var(--line);background:#fff;border-radius:13px;font-size:23px}.emoji.active{background:var(--pink2);border-color:var(--pink)}.note{font-size:11px;color:var(--muted);margin:5px 0 11px}.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.photo{aspect-ratio:1;border-radius:13px;overflow:hidden;background:#fff0f2}.photo img{width:100%;height:100%;object-fit:cover}.upload{display:flex;align-items:center;justify-content:center;border:1px dashed #d9b9bd;color:var(--pink);font-weight:850;text-align:center;flex-direction:column;gap:5px;padding:15px}.upload input{display:none}.score{font-size:34px;font-weight:900;text-align:center}.status{padding:10px;border-radius:12px;background:#fff5f5;color:var(--muted);font-size:12px;margin-top:9px}.ok{background:#edf9f0;color:#477052}.review{border:1px solid var(--line);background:#fffafa;border-radius:16px;padding:13px}.song,.moviebox{margin-top:8px;padding:11px;background:var(--pink2);border-radius:12px;font-size:13px}.moviebox{background:#fff5dc;border-color:#f1dca4}.moviebadge{display:inline-block;background:#fff0c5;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:850;color:#76581c}.datecard{border:1px solid var(--line);background:#fffafa;border-radius:17px;padding:14px;margin:9px 0}.datecard.selected{border-color:var(--pink);box-shadow:0 0 0 3px rgba(233,143,155,.1)}.datecard .meta{font-size:11px;color:var(--muted)}.date-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:8px 3px;border-bottom:1px solid var(--line);text-align:center}th:first-child,td:first-child{text-align:left}.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:7px}.empty{text-align:center;padding:22px;color:var(--muted)}.divider{height:1px;background:var(--line);margin:15px 0}@media(min-width:620px){.app{padding-left:20px;padding-right:20px}}
+.hero{min-height:45vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px 8px}.logo{font-size:56px}h1{font-size:clamp(36px,10vw,54px);line-height:1;letter-spacing:-2px;margin:12px 0}.tag,.tiny{color:var(--muted);font-size:13px}.card{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:19px;margin:12px 0}.field{margin-bottom:13px}label{display:block;font-size:11px;font-weight:850;margin-bottom:6px;letter-spacing:.2px}input,textarea,select{width:100%;border:1px solid var(--line);background:#fffafa;border-radius:14px;padding:13px;font-size:16px;outline:0;color:var(--ink)}textarea{min-height:100px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(233,143,155,.12)}.btn{width:100%;border:0;border-radius:15px;padding:14px;min-height:50px;font-weight:850}.primary{background:var(--pink);color:#fff}.secondary{background:var(--pink2);color:var(--ink)}.ghost{background:#fff;border:1px solid var(--line)}.row,.choices,.dash,.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.screen{display:none}.screen.active{display:block}.top{position:sticky;top:0;z-index:5;padding:10px 0;background:rgba(255,247,245,.92);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center}.pill{background:var(--pink2);border-radius:999px;padding:6px 9px;font-size:11px;font-weight:800}.tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:6px 0 12px}.tab{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 4px;font-size:11px;font-weight:800}.tab.active{background:var(--pink2);border-color:var(--pink)}.hidden{display:none!important}.section{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:14px}h2{font-size:19px;margin:0}h3{font-size:15px;margin:15px 0 8px}.rating{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px}.emoji{flex:0 0 48px;min-height:48px;border:1px solid var(--line);background:#fff;border-radius:13px;font-size:23px}.emoji.active{background:var(--pink2);border-color:var(--pink)}.note{font-size:11px;color:var(--muted);margin:5px 0 11px}.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.photo{aspect-ratio:1;border-radius:13px;overflow:hidden;background:#fff0f2}.photo img{width:100%;height:100%;object-fit:cover}.upload{display:flex;align-items:center;justify-content:center;border:1px dashed #d9b9bd;color:var(--pink);font-weight:850;text-align:center;flex-direction:column;gap:5px;padding:15px}.upload input{display:none}.score{font-size:34px;font-weight:900;text-align:center}.status{padding:10px;border-radius:12px;background:#fff5f5;color:var(--muted);font-size:12px;margin-top:9px}.ok{background:#edf9f0;color:#477052}.review{border:1px solid var(--line);background:#fffafa;border-radius:16px;padding:13px}.song,.moviebox{margin-top:8px;padding:11px;background:var(--pink2);border-radius:12px;font-size:13px}.moviebox{background:#fff5dc;border-color:#f1dca4}.moviebadge{display:inline-block;background:#fff0c5;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:850;color:#76581c}.datecard{border:1px solid var(--line);background:#fffafa;border-radius:17px;padding:14px;margin:9px 0}.datecard.selected{border-color:var(--pink);box-shadow:0 0 0 3px rgba(233,143,155,.1)}.datecard .meta{font-size:11px;color:var(--muted)}.date-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:8px 3px;border-bottom:1px solid var(--line);text-align:center}th:first-child,td:first-child{text-align:left}.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:7px}.empty{text-align:center;padding:22px;color:var(--muted)}.divider{height:1px;background:var(--line);margin:15px 0}@media(min-width:620px){.app{padding-left:20px;padding-right:20px}}
 </style>
 </head>
 <body>
@@ -18,7 +18,7 @@
   <div class="card">
     <div class="field"><label>ROOM CODE</label><input id="room" placeholder="e.g. SOUP2026" autocapitalize="characters"></div>
     <label>WHO ARE YOU?</label>
-    <div class="choices"><button class="choice" id="a" onclick="pick('A')">💗<br>Partner A</button><button class="choice" id="b" onclick="pick('B')">💗<br>Partner B</button></div>
+    <div class="choices"><button class="choice" id="a" onclick="pick('A')">💗<br>Baby L</button><button class="choice" id="b" onclick="pick('B')">💗<br>Baby N</button></div>
     <div class="field" style="margin-top:13px"><label>YOUR NAME</label><input id="name" placeholder="e.g. Rachel"></div>
     <button class="btn primary" onclick="enter()">Enter Review Room →</button>
     <div id="welcomeStatus" class="status hidden"></div>
@@ -33,6 +33,7 @@
     <button class="tab" onclick="tab('dates',this)">📅 Date Archive</button>
     <button class="tab" onclick="tab('dashboard',this)">⚖️ Reviews</button>
     <button class="tab" onclick="tab('memories',this)">📸 Memories</button>
+    <button class="tab" onclick="tab('manage',this)">🛠️ Manage</button>
   </div>
 
   <div id="reviewTab">
@@ -95,21 +96,46 @@
   </div>
 
   <div id="memoriesTab" class="hidden"><div class="card"><div class="section"><h2>📸 Relationship Memories</h2></div><div id="allPhotos"></div></div></div>
+  <div id="manageTab" class="hidden">
+    <div class="card">
+      <div class="section"><h2>🛠️ Manage Reviews</h2><span class="pill">Current room</span></div>
+      <p class="tiny">Fix accidental submissions without touching the rest of your archive. Editing a date is done by opening it, changing the fields, and saving again.</p>
+      <div class="field"><label>DATE TO MANAGE</label><select id="manageDate"></select></div>
+      <div class="field"><label>SWITCH THIS REVIEW TO</label><select id="switchRole"><option value="A">Baby L</option><option value="B">Baby N</option></select></div>
+      <button class="btn secondary" onclick="switchCurrentReview()">↔️ Switch My Review</button>
+      <div class="divider"></div>
+      <button class="btn ghost" onclick="deleteMyReview()">🗑️ Delete My Review Only</button>
+      <div style="height:8px"></div>
+      <button class="btn ghost" onclick="deleteEntireDate()">🚨 Delete This Entire Date</button>
+      <div id="manageStatus" class="status hidden"></div>
+    </div>
+    <div class="card">
+      <h2>💡 What these controls do</h2>
+      <p class="tiny">• <b>Switch My Review</b> changes Baby L ↔ Baby N for one saved review and keeps its photos and answers.</p>
+      <p class="tiny">• <b>Delete My Review</b> removes only the selected review.</p>
+      <p class="tiny">• <b>Delete This Entire Date</b> removes both partners' reviews for that date. Use this only for accidental/test dates.</p>
+      <p class="tiny">• <b>Edit</b> is simply: Date Archive → Open Date → change anything → Save This Date.</p>
+    </div>
+  </div>
 </section>
 </div>
 
 <script type="module">
 import {createClient} from "https://esm.sh/@supabase/supabase-js@2";
 const supabase=createClient("https://ctsljauewwjulpunsbph.supabase.co","sb_publishable_F-r8oM5L0QD7BT2YawoF4A_he3GHQnI");
+const partnerNames={A:"Baby L",B:"Baby N"};
 const cats=[["kiss","💋","Kiss quality"],["snacks","🍟","Snack acquisition"],["navigation","🧭","Navigation competence"],["bullshit","🤡","Amount of bullshit tolerated"],["romance","🥰","Romantic competence"],["laughs","🤣","Laugh generation"],["effort","🫶","Partner effort"],["patience","🧘","Patience under adverse conditions"],["communication","💬","Communication skills"],["chaos","🌪️","Relationship chaos management"],["outfit","👗","Date-night outfit performance"],["vibes","✨","Overall partner vibes"]];
 const emo=["💀","😵‍💫","😐","🙂","🥰","🤩"], lab=["Immediate HR intervention","Needs improvement","Meets minimum requirements","Above expectations","Outstanding","Employee of the century"];
 let role="",room="",name="",ratings={},photos=[],currentDateId=null;
 
 const $=x=>document.getElementById(x);
 window.pick=r=>{role=r;$("a").classList.toggle("active",r==="A");$("b").classList.toggle("active",r==="B")};
-window.tab=async(t,el)=>{["review","dates","dashboard","memories"].forEach(x=>$(x+"Tab").classList.toggle("hidden",x!==t));document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));el.classList.add("active");if(t==="dates")archive();if(t==="dashboard")dashboard();if(t==="memories")memories()};
-window.enter=async()=>{room=$("room").value.trim().toUpperCase();name=$("name").value.trim();if(!room||!name||!role){status("welcomeStatus","Please enter your room code, name, and partner role.");return}$("pill").textContent=room+" · Partner "+role;$("welcome").classList.remove("active");$("roomScreen").classList.add("active");newDate();await archive();};
-window.newDate=()=>{currentDateId=crypto.randomUUID();clearForm();$("dateNumber").textContent="New date";};
+window.tab=async(t,el)=>{["review","dates","dashboard","memories","manage"].forEach(x=>$(x+"Tab").classList.toggle("hidden",x!==t));document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));el.classList.add("active");if(t==="dates")archive();if(t==="dashboard")dashboard();if(t==="memories")memories();if(t==="manage")manageDates()};
+window.enter=async()=>{room=$("room").value.trim().toUpperCase();name=$("name").value.trim();if(!room||!name||!role){status("welcomeStatus","Please enter your room code, name, and partner role.");return}$("pill").textContent=room+" · "+partnerNames[role];$("welcome").classList.remove("active");$("roomScreen").classList.add("active");newDate();await archive();};
+window.newDate=()=>{
+      currentDateId=crypto.randomUUID();clearForm();$("dateNumber").textContent="New date";
+      document.querySelector('.tab[onclick*="review"]').click();
+    };
 function clearForm(){ratings={};photos=[];document.querySelectorAll("#reviewTab input,#reviewTab textarea").forEach(x=>x.value="");$("watchedMovie").value="no";$("movieFields").classList.add("hidden");$("movieRating").value="";$("movieSnacks").value="";ratingsUI();score();myPhotos()};
 $("watchedMovie").addEventListener("change",()=>$("movieFields").classList.toggle("hidden",$("watchedMovie").value!=="yes"));
 function ratingsUI(){$("ratings").innerHTML=cats.map(([k,i,l])=>`<div class="field"><label>${i} ${l}</label><div class="rating">${emo.map((e,n)=>`<button class="emoji ${ratings[k]===n+1?"active":""}" onclick="rate('${k}',${n+1})">${e}</button>`).join("")}</div><div class="note">${ratings[k]?lab[ratings[k]-1]:"Pick your vibe"}</div></div>`).join("")}
@@ -119,9 +145,83 @@ function payload(){const d={ratings,movie:{watched:$("watchedMovie").value,title
 function apply(d){ratings=d.ratings||{};document.querySelectorAll("#reviewTab input,#reviewTab textarea").forEach(x=>{if(d[x.id]!=null)x.value=d[x.id]});const m=d.movie||{};$("watchedMovie").value=m.watched||"no";$("movieFields").classList.toggle("hidden",$("watchedMovie").value!=="yes");["title","rating","snacks","thoughts","moment"].forEach(k=>{const id="movie"+k[0].toUpperCase()+k.slice(1);if(m[k]!=null)$(id).value=m[k]});ratingsUI();score()}
 function status(id,text,ok=false){$(id).textContent=text;$(id).classList.remove("hidden");$(id).classList.toggle("ok",ok)}
 window.save=async()=>{if(!$("date").value){status("saveStatus","Please choose a date first.");return}const row={room_code:room,reviewer_name:name,partner_role:role,date_id:currentDateId,date_value:$("date").value,payload:payload(),photos};const {error}=await supabase.from("relationship_date_reviews").upsert(row,{onConflict:"room_code,date_id,reviewer_name"});status("saveStatus",error?"🔴 "+error.message:"🟢 Date saved permanently to your archive.",!error);if(!error){await archive();await dashboard();}};
-async function loadDate(id){const {data,error}=await supabase.from("relationship_date_reviews").select("*").eq("room_code",room).eq("date_id",id).eq("reviewer_name",name).maybeSingle();if(error){status("saveStatus","🔴 "+error.message);return}if(!data)return;currentDateId=id;$("dateNumber").textContent="Date "+(data.date_value||"");$("date").value=data.date_value||"";apply(data.payload||{});photos=data.photos||[];myPhotos()}
-window.archive=async()=>{const {data,error}=await supabase.from("relationship_date_reviews").select("date_id,date_value,partner_role,reviewer_name,payload,photos").eq("room_code",room).order("date_value",{ascending:false});if(error){$("dateArchive").innerHTML=`<div class="empty">🔴 ${error.message}</div>`;return}const grouped={};(data||[]).forEach(r=>{(grouped[r.date_id]??=[]).push(r)});const ids=Object.keys(grouped);$("dateArchive").innerHTML=ids.length?ids.map((id,i)=>{const rows=grouped[id],d=rows[0],movie=rows.find(r=>r.payload?.movie?.watched==="yes")?.payload?.movie;return `<div class="datecard ${id===currentDateId?"selected":""}"><b>📅 ${d.date_value||"Undated"}</b><div class="meta">${rows.length} partner review(s) · ${rows.reduce((n,r)=>n+(r.photos||[]).length,0)} photo(s)</div>${d.payload?.place?`<div style="margin-top:5px">📍 ${d.payload.place}</div>`:""}${movie?`<div class="moviebox">🎬 <b>${movie.title||"Movie night"}</b>${movie.rating?" · "+movie.rating:""}</div>`:""}<div class="date-actions"><button class="btn secondary" onclick="loadDate('${id}')">Open Date</button><button class="btn ghost" onclick="newDate()">＋ New Date</button></div></div>`}).join(""):`<div class="empty">No dates yet. Go make one. 💗</div>`};
-window.dashboard=async()=>{if(!currentDateId)return;const {data,error}=await supabase.from("relationship_date_reviews").select("*").eq("room_code",room).eq("date_id",currentDateId);if(error){$("dashStatus").textContent="🔴 "+error.message;return}$("dashStatus").textContent=(data?.length||0)+" of 2 reviews submitted for this date.";$("cards").innerHTML=(data||[]).map(r=>{const vals=Object.values(r.payload?.ratings||{}),avg=vals.length?(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1):"—",m=r.payload?.movie;return `<div class="review"><b>💗 Partner ${r.partner_role}</b><div class="score">${avg} / 6</div><div class="tiny">${(r.photos||[]).length} photo(s)</div>${r.payload?.song?`<div class="song">🎵 <b>${r.payload.song}</b>${r.payload.artist?" — "+r.payload.artist:""}</div>`:""}${m?.watched==="yes"?`<div class="moviebox">🎬 ${m.title||"Movie"}${m.rating?" · "+m.rating:""}</div>`:""}</div>`}).join("")};
+async function loadDate(id){const {data,error}=await supabase.from("relationship_date_reviews").select("*").eq("room_code",room).eq("date_id",id).eq("reviewer_name",name).maybeSingle();if(error){status("saveStatus","🔴 "+error.message);return}if(!data)return;currentDateId=id;$("dateNumber").textContent="Date "+(data.date_value||"");$("date").value=data.date_value||"";apply(data.payload||{});photos=data.photos||[];myPhotos();
+  document.querySelector('.tab[onclick*="review"]').click();
+}
+window.archive=async()=>{const {data,error}=await supabase.from("relationship_date_reviews").select("date_id,date_value,partner_role,reviewer_name,payload,photos").eq("room_code",room).order("date_value",{ascending:false});if(error){$("dateArchive").innerHTML=`<div class="empty">🔴 ${error.message}</div>`;return}const grouped={};(data||[]).forEach(r=>{(grouped[r.date_id]??=[]).push(r)});const ids=Object.keys(grouped);$("dateArchive").innerHTML=ids.length?ids.map((id,i)=>{const rows=grouped[id],d=rows[0],movie=rows.find(r=>r.payload?.movie?.watched==="yes")?.payload?.movie;return `<div class="datecard ${id===currentDateId?"selected":""}"><b>📅 ${d.date_value||"Undated"}</b><div class="meta">${rows.map(r=>partnerNames[r.partner_role]||r.partner_role).join(" + ")} · ${rows.reduce((n,r)=>n+(r.photos||[]).length,0)} photo(s)</div>${d.payload?.place?`<div style="margin-top:5px">📍 ${d.payload.place}</div>`:""}${movie?`<div class="moviebox">🎬 <b>${movie.title||"Movie night"}</b>${movie.rating?" · "+movie.rating:""}</div>`:""}<div class="date-actions"><button class="btn secondary" onclick="loadDate('${id}')">Open Date</button><button class="btn ghost" onclick="newDate()">＋ New Date</button></div></div>`}).join(""):`<div class="empty">No dates yet. Go make one. 💗</div>`};
+window.dashboard=async()=>{
+  if(!currentDateId)return;
+  const {data,error}=await supabase.from("relationship_date_reviews").select("*").eq("room_code",room).eq("date_id",currentDateId);
+  if(error){$("dashStatus").textContent="🔴 "+error.message;return}
+  $("dashStatus").textContent=(data?.length||0)+" of 2 reviews submitted for this date.";
+  $("cards").innerHTML=(data||[]).map(r=>{
+    const vals=Object.values(r.payload?.ratings||{}),avg=vals.length?(vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1):"—",m=r.payload?.movie;
+    return `<div class="review"><b>💗 ${partnerNames[r.partner_role]||("Partner "+r.partner_role)}</b><div class="score">${avg} / 6</div><div class="tiny">${(r.photos||[]).length} photo(s)</div>${r.payload?.song?`<div class="song">🎵 <b>${r.payload.song}</b>${r.payload.artist?" — "+r.payload.artist:""}</div>`:""}${m?.watched==="yes"?`<div class="moviebox">🎬 ${m.title||"Movie"}${m.rating?" · "+m.rating:""}</div>`:""}</div>`;
+  }).join("");
+};async function manageDates(){
+  const {data,error}=await supabase.from("relationship_date_reviews").select("date_id,date_value,partner_role,reviewer_name").eq("room_code",room).order("date_value",{ascending:false});
+  if(error){status("manageStatus","🔴 "+error.message);return}
+  const ids=[...new Map((data||[]).map(r=>[r.date_id,r])).values()];
+  $("manageDate").innerHTML=ids.map(r=>`<option value="${r.date_id}">${r.date_value||"Undated"} · ${r.date_id.slice(0,8)}</option>`).join("") || '<option value="">No saved dates</option>';
+  $("switchRole").value=role==="A"?"B":"A";
+}
+async function getManageRow(){
+  const dateId=$("manageDate").value;
+  if(!dateId) throw new Error("No saved date selected.");
+  const {data,error}=await supabase.from("relationship_date_reviews").select("*").eq("room_code",room).eq("date_id",dateId).eq("reviewer_name",name).maybeSingle();
+  if(error) throw error;
+  if(!data) throw new Error("Your review was not found for that date.");
+  return data;
+}
+async function switchCurrentReview(){
+  try{
+    const row=await getManageRow();
+    const target=$("switchRole").value;
+    if(target===row.partner_role){status("manageStatus","That review is already assigned to "+partnerNames[target]+".");return}
+    const {data:existing,error:findError}=await supabase.from("relationship_date_reviews").select("id").eq("room_code",room).eq("date_id",row.date_id).eq("partner_role",target).maybeSingle();
+    if(findError) throw findError;
+    if(existing) throw new Error(partnerNames[target]+" already has a review for this date. Switch the other review first or edit the existing one.");
+    const {error}=await supabase.from("relationship_date_reviews").update({partner_role:target}).eq("id",row.id);
+    if(error) throw error;
+    role=target;
+    $("pill").textContent=room+" · "+partnerNames[role];
+    $("switchRole").value=role==="A"?"B":"A";
+    status("manageStatus","🟢 Switched this review to "+partnerNames[target]+". Your answers and photos stayed attached.",true);
+    await dashboard(); await archive(); await memories();
+  }catch(e){status("manageStatus","🔴 "+e.message)}
+}
+async function deleteMyReview(){
+  try{
+    const row=await getManageRow();
+    if(!confirm("Delete "+partnerNames[row.partner_role]+"'s review for "+(row.date_value||"this date")+"? This cannot be undone.")) return;
+    await deleteStoredPhotos(row.photos||[]);
+    const {error}=await supabase.from("relationship_date_reviews").delete().eq("id",row.id);
+    if(error) throw error;
+    status("manageStatus","🟢 Review deleted.",true);
+    await archive(); await dashboard(); await memories(); await manageDates();
+  }catch(e){status("manageStatus","🔴 "+e.message)}
+}
+async function deleteEntireDate(){
+  const dateId=$("manageDate").value;
+  if(!dateId){status("manageStatus","No date selected.");return}
+  const {data,error}=await supabase.from("relationship_date_reviews").select("*").eq("room_code",room).eq("date_id",dateId);
+  if(error){status("manageStatus","🔴 "+error.message);return}
+  if(!confirm("DELETE THE ENTIRE DATE? Both Baby L and Baby N reviews and their uploaded photos for this date will be removed. This cannot be undone.")) return;
+  try{
+    for(const r of (data||[])) await deleteStoredPhotos(r.photos||[]);
+    const {error:delError}=await supabase.from("relationship_date_reviews").delete().eq("room_code",room).eq("date_id",dateId);
+    if(delError) throw delError;
+    if(currentDateId===dateId) newDate();
+    status("manageStatus","🟢 Entire date deleted.",true);
+    await archive(); await dashboard(); await memories(); await manageDates();
+  }catch(e){status("manageStatus","🔴 "+e.message)}
+}
+async function deleteStoredPhotos(list){
+  const paths=(list||[]).map(p=>p.path).filter(Boolean);
+  if(!paths.length) return;
+  const {error}=await supabase.storage.from("date-photos").remove(paths);
+  if(error) console.warn("Photo cleanup warning:",error.message);
+}
 window.reveal=async()=>{const {data,error}=await supabase.from("relationship_date_reviews").select("*").eq("room_code",room).eq("date_id",currentDateId);if(error)return alert(error.message);if((data||[]).length<2)return alert("Both partners need to save this date first. 💗");let map={};data.forEach(r=>map[r.partner_role]=r);let out="<h3>⚖️ Side-by-side comparison</h3><table><tr><th>Category</th><th>Partner A</th><th>Partner B</th></tr>";for(const [k,i,l] of cats)out+=`<tr><td>${i} ${l}</td><td>${emo[(map.A.payload?.ratings||{})[k]-1]||"—"}</td><td>${emo[(map.B.payload?.ratings||{})[k]-1]||"—"}</td></tr>`;out+="</table>";data.forEach(r=>{const p=r.payload||{},m=p.movie||{};out+=`<h3>💗 Partner ${r.partner_role}</h3>${p.song?`<div class="song">🎵 ${p.song} — ${p.artist||""}</div>`:""}${m.watched==="yes"?`<div class="moviebox">🎬 <b>${m.title||"Movie"}</b><br>${m.rating||""} ${m.snacks?" · "+m.snacks:""}<p>${m.thoughts||""}</p>${m.moment?`🏆 ${m.moment}`:""}</div>`:""}${p.favourite?`<p><b>🏆 Achievement:</b> ${p.favourite}</p>`:""}${p.funny?`<p><b>🤣 Incident:</b> ${p.funny}</p>`:""}${p.loved?`<p><b>💗 Positive feedback:</b> ${p.loved}</p>`:""}`});$("compare").innerHTML=out};
 function myPhotos(){$("myPhotos").innerHTML=photos.map(p=>`<div class="photo"><img src="${p.url}"></div>`).join("")}
 $("photoInput").addEventListener("change",async e=>{for(const f of e.target.files){const path=`${room}/${currentDateId}/${role}/${crypto.randomUUID()}-${f.name.replace(/[^a-z0-9._-]/gi,"_")}`;const {error}=await supabase.storage.from("date-photos").upload(path,f);if(error){alert(error.message);continue}const {data}=supabase.storage.from("date-photos").getPublicUrl(path);photos.push({url:data.publicUrl,path})}myPhotos();await save();e.target.value=""});
