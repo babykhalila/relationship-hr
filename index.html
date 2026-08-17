@@ -22,6 +22,13 @@
     <div class="field" style="margin-top:13px"><label>YOUR NAME</label><input id="name" placeholder="e.g. Rachel"></div>
     <button class="btn primary" onclick="enter()">Enter Review Room →</button>
     <div id="welcomeStatus" class="status hidden"></div>
+    <div id="revealBox" class="card hidden" style="margin-top:16px;">
+  <h2>👀 Review Reveal</h2>
+  <p id="revealMessage">Waiting for both reviews...</p>
+<button id="revealButton" class="btn primary" onclick="reveal()">    Reveal Our Reviews 💌
+  </button>
+  <div id="partnerReview" style="margin-top:18px;"></div>
+</div>
   </div>
   <p class="tiny" style="text-align:center">One room. Every date. No restart button. 💍</p>
 </section>
@@ -145,8 +152,34 @@ function payload(){const d={ratings,movie:{watched:$("watchedMovie").value,title
 function apply(d){ratings=d.ratings||{};document.querySelectorAll("#reviewTab input,#reviewTab textarea").forEach(x=>{if(d[x.id]!=null)x.value=d[x.id]});const m=d.movie||{};$("watchedMovie").value=m.watched||"no";$("movieFields").classList.toggle("hidden",$("watchedMovie").value!=="yes");["title","rating","snacks","thoughts","moment"].forEach(k=>{const id="movie"+k[0].toUpperCase()+k.slice(1);if(m[k]!=null)$(id).value=m[k]});ratingsUI();score()}
 function status(id,text,ok=false){$(id).textContent=text;$(id).classList.remove("hidden");$(id).classList.toggle("ok",ok)}
 window.save=async()=>{if(!$("date").value){status("saveStatus","Please choose a date first.");return}const row={room_code:room,reviewer_name:name,partner_role:role,date_id:currentDateId,date_value:$("date").value,payload:payload(),photos};const {error}=await supabase.from("relationship_date_reviews").upsert(row,{onConflict:"room_code,date_id,reviewer_name"});status("saveStatus",error?"🔴 "+error.message:"🟢 Date saved permanently to your archive.",!error);if(!error){await archive();await dashboard();}};
-async function loadDate(id){const {data,error}=await supabase.from("relationship_date_reviews").select("*").eq("room_code",room).eq("date_id",id).eq("reviewer_name",name).maybeSingle();if(error){status("saveStatus","🔴 "+error.message);return}if(!data)return;currentDateId=id;$("dateNumber").textContent="Date "+(data.date_value||"");$("date").value=data.date_value||"";apply(data.payload||{});photos=data.photos||[];myPhotos();
+async function loadDate(id){
+  const {data,error}=await supabase
+    .from("relationship_date_reviews")
+    .select("*")
+    .eq("room_code",room)
+    .eq("date_id",id)
+    .eq("partner_role",role)
+    .maybeSingle();
+
+  if(error){
+    alert("🔴 "+error.message);
+    return;
+  }
+
+  if(!data){
+    alert("I couldn't find your review for this date. 💗");
+    return;
+  }
+
+  currentDateId=id;
+  $("dateNumber").textContent="Date "+(data.date_value||"");
+  $("date").value=data.date_value||"";
+  apply(data.payload||{});
+  photos=data.photos||[];
+  myPhotos();
+
   document.querySelector('.tab[onclick*="review"]').click();
+}  document.querySelector('.tab[onclick*="review"]').click();
 }
 window.archive=async()=>{const {data,error}=await supabase.from("relationship_date_reviews").select("date_id,date_value,partner_role,reviewer_name,payload,photos").eq("room_code",room).order("date_value",{ascending:false});if(error){$("dateArchive").innerHTML=`<div class="empty">🔴 ${error.message}</div>`;return}const grouped={};(data||[]).forEach(r=>{(grouped[r.date_id]??=[]).push(r)});const ids=Object.keys(grouped);$("dateArchive").innerHTML=ids.length?ids.map((id,i)=>{const rows=grouped[id],d=rows[0],movie=rows.find(r=>r.payload?.movie?.watched==="yes")?.payload?.movie;return `<div class="datecard ${id===currentDateId?"selected":""}"><b>📅 ${d.date_value||"Undated"}</b><div class="meta">${rows.map(r=>partnerNames[r.partner_role]||r.partner_role).join(" + ")} · ${rows.reduce((n,r)=>n+(r.photos||[]).length,0)} photo(s)</div>${d.payload?.place?`<div style="margin-top:5px">📍 ${d.payload.place}</div>`:""}${movie?`<div class="moviebox">🎬 <b>${movie.title||"Movie night"}</b>${movie.rating?" · "+movie.rating:""}</div>`:""}<div class="date-actions"><button class="btn secondary" onclick="loadDate('${id}')">Open Date</button><button class="btn ghost" onclick="newDate()">＋ New Date</button></div></div>`}).join(""):`<div class="empty">No dates yet. Go make one. 💗</div>`};
 window.dashboard=async()=>{
